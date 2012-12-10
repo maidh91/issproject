@@ -1,5 +1,6 @@
 <?php
-	define("ROOT_DIR", "localhost/task1");
+        define("APP_NAME", "issproject");
+	define("ROOT_DIR", $_SERVER['DOCUMENT_ROOT']."/".APP_NAME);
 	//require_once 'customSmarty.php';
 	require_once 'AutoLoader.php';
 	require_once 'dispatcher.php';
