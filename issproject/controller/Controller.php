@@ -13,6 +13,5 @@ class Controller {
 	function display($string){
 		$this->smarty->display($string);
 	}
-	
 }
 ?>

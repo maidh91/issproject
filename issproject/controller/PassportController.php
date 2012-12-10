@@ -4,9 +4,8 @@ class PassportController extends AppController{
 	function __construct(){
 		parent::__construct();
 	}
-	public function index() {
-
-		$this->display('templates/passport/index.html');
+	public function index(){
+            $this->display('templates/passport/index.html');
 	}
         public function register() {
             $register = $_POST['register'];
