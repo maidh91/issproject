@@ -1,6 +1,5 @@
 <?php
 require_once 'customSmarty.php';
-
 class Controller {
 	
 	public $smarty;
