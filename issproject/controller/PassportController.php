@@ -10,7 +10,6 @@ class PassportController extends AppController{
         public function register() {
             $register = $_POST['register'];
             $register = new Register($register);
-            
             $passportProcessing = new PassportLogic();
             $passportProcessing->savePassport($register);
             //$this->display('templates/passport/register_success.html');
