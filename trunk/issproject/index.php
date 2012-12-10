@@ -1,6 +1,6 @@
 <?php
-        define("APP_NAME", "issproject");
-	define("ROOT_DIR", $_SERVER['DOCUMENT_ROOT']."/".APP_NAME);
+        require_once 'config/config.php';
+        require_once 'database/config.php';
 	//require_once 'customSmarty.php';
 	require_once 'AutoLoader.php';
 	require_once 'dispatcher.php';
