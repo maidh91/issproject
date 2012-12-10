@@ -1,0 +1,53 @@
+{extends file="../layout/app.html"}
+{block name=main}
+        <div>Đăng kí Passport</div>
+        <form action="index.php?r=passport&m=register" method="post">
+        <table>
+            <tr>
+                <td>Họ</td><td><input type="text" name="register[Ho]"/></td>
+            </tr>
+            <tr>
+                <td>Tên và chữ lót</td><td><input type="text" name="register[Ten]"/></td>
+            </tr>
+            <tr>
+                <td>Chứng minh nhân dân</td><td><input type="text" name="register[CMND]"/></td>
+            </tr>
+            <tr>
+                <td>Giới tính</td><td><input type="text" name="register[PhaiNam]"/></td>
+            </tr>
+            <tr>
+                <td>Ngày sinh</td><td><input type="text" name="register[NgaySinh]"/></td>
+            </tr>
+            <tr>
+                <td>DienThoai</td> <td><input type="text" name="register[DienThoai]"/></td>
+            </tr>
+            <tr>
+                <td>Email</td><td><input type="text" name="register[Email]"/></td>
+            </tr>
+            <tr>
+                <td>Số nhà</td><td><input type="text" name="register[SoNha]"/></td>
+            </tr>
+            <tr>
+                <td>Tên đường</td><td><input type="text" name="register[TenDuong]"/></td>
+            </tr>
+            <tr>
+                <td>Phường</td><td><input type="text" name="register[Phuong]"/></td>
+            </tr>
+            <tr>
+                <td>Quận</td><td><input type="text" name="register[Quan]"/></td>
+            </tr>
+            <tr>
+                <td>Tỉnh</td><td><input type="text" name="register[Tinh]"/></td>
+            </tr>
+            <tr>
+                <td>Lý do</td><td><input type="text" name="register[LyDo]"/></td>
+            </tr>
+            <tr>
+                <td>Loại Passport</td><td><input type="text" name="register[LoaiPassport]"/></td>
+            </tr>
+            <tr>
+                <td></td><td><button type="submit">Đăng kí Hộ chiếu</button></td>
+            </tr>
+        </table>
+       </form>
+        {/block}
