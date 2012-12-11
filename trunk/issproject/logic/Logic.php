@@ -1,7 +1,9 @@
 <?php
 class Logic{
+    public $username = USERNAME;
+    public $password = PASSWORD;
      public function createWriteQuery($sql){
-        $conn = oci_connect(USERNAME,PASSWORD,HOST);
+        $conn = oci_connect($username,$password,HOST);
         if($conn){
             $ociid = oci_parse($conn,$sql);
             $result = oci_execute($ociid);
@@ -15,7 +17,7 @@ class Logic{
     }
     
     public function createReadQuery($sql){
-        $conn = oci_connect(USERNAME,PASSWORD,HOST);
+        $conn = oci_connect($username,$password,HOST);
         if($conn){
             $ociid = oci_parse($conn,$sql);
             oci_execute($ociid);
