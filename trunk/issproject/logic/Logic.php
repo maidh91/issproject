@@ -2,8 +2,14 @@
 class Logic{
     public $username = USERNAME;
     public $password = PASSWORD;
-     public function createWriteQuery($sql){
-        $conn = oci_connect($username,$password,HOST);
+    
+    public function setUser($name,$pass){
+        $this->username = $name;
+        $this->password = $pass;
+    }
+            
+    public function createWriteQuery($sql){
+        $conn = oci_connect($this->username,$this->password,HOST);
         if($conn){
             $ociid = oci_parse($conn,$sql);
             $result = oci_execute($ociid);
@@ -17,7 +23,7 @@ class Logic{
     }
     
     public function createReadQuery($sql){
-        $conn = oci_connect($username,$password,HOST);
+        $conn = oci_connect($this->username,$this->password,HOST);
         if($conn){
             $ociid = oci_parse($conn,$sql);
             oci_execute($ociid);
