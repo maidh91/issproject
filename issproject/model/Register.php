@@ -19,8 +19,8 @@ class Register extends Model{
     public $Quan;
     public $Tinh;
     public $LyDo;
-    public $LoaiPassport;
-
+        public $LoaiPassport;
+    /*
     function __construct($array) {
         $this->Ho = $array['Ho'];
         $this->Ten = $array['Ten'];
@@ -37,6 +37,7 @@ class Register extends Model{
         $this->LyDo = $array['LyDo'];
         $this->LoaiPassport = $array['LoaiPassport'];
     }
+     */
 }
  
 ?>
