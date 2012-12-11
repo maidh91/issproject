@@ -1,12 +1,12 @@
 <?php
 include("PassportInterface.php");
-class PassportLogic  implements PassportProcess{
-    public function createQuery($query){
-        oci_connect(USERNAME,PASSWORD,HOST);
-    }
-    
-    public function savePassport(Passport $passport){
-        
+class PassportLogic extends Logic{ 
+    public function savePassport(Register $register){
+        $sql = "select * from test2";
+        $row = $this->createReadQuery($sql);
+        var_dump($row);
+        echo $row[1]['ID'];
+        exit(0);
     }
 }
 ?>
