@@ -1,5 +1,4 @@
 <?php
-include("PassportInterface.php");
 class PassportLogic extends Logic{ 
     public function savePassport(Register $register){
         $sql = "select * from test2";
