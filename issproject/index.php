@@ -1,5 +1,6 @@
 <?php
         require_once 'config/config.php';
+        require_once 'config/code.php';
         require_once 'database/config.php';
 	//require_once 'customSmarty.php';
 	require_once 'AutoLoader.php';
