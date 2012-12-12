@@ -1,7 +1,7 @@
 <?php
 
 class RegisterLogic extends Logic {
-    public function createRegister(Register $register) {
+    public function createRegister(Register $register){
         $CMND = $register->CMND;
         $Ho = $register->Ho;
         $Ten = $register->Ten;
@@ -23,7 +23,12 @@ class RegisterLogic extends Logic {
              return $error_code;
         }
     }
-
+    
+      public function findall(){
+        $sql = "select * from ols_test.REGISTER";
+        $results = $this->select($sql);
+        return $results;
+    }
 }
 
 ?>

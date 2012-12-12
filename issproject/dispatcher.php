@@ -7,22 +7,7 @@ define("defaultMethod", "register");
 			}
 			
 			public function controllerMapping($ctrlMap){
-				switch ($ctrlMap) {
-					case "user":
-						return "UserController";
-						break;
-					case "media":
-						return "MediaController";
-						break;
-					case "home":
-						return "HomeController";
-						break;
-                                        case "register":
-                                            return "RegisterController";
-                                            break;
-					default:
-                                            return "NoController";
-				}
+                            return $ctrlMap."Controller";
 			}
 			
 			public function methodMapping($methodMap){

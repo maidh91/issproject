@@ -1,0 +1,108 @@
+{extends file=$layout}
+{block name=main}
+<h1>Xác thực dữ liệu đăng kí passport lần 1</h1>
+<div>
+    <td><a href="#" class="btn">Xác thực tất cả</a></td>
+    <td><a href="#" class="btn">Loại bỏ tất cả</a></td>
+</div>
+<table class = "table-striped">
+    <thead>
+	<tr>
+                <td><input type="checkbox" name="vehicle" class="checkall" value="yes"/></td>
+		<td>Chứng minh nhân dân</td>
+                <td>Họ</td>
+                <td>Tên</td>
+                <td colspan="3" style="text-align:center">Hành động</td>
+	</tr>
+    </thead>
+   <tbody>
+        {foreach from=$registers item=register}
+    <tr>
+        <td><input type="checkbox" name="vehicle" class="checkitem" value="yes"/></td>
+        <td>{$register.CMND}</td>
+        <td>{$register.HO}</td>
+        <td>{$register.TEN}</td>          
+        <td><a href="#" id="show_hide{$register.IDREGISTER}" class="btn">Kiểm tra thông tin</a></td>
+        <td><a href="#" class="btn">Chấp Nhận</a></td>
+        <td><a href="#" class="btn">Loại bỏ</a></td>
+    </tr>
+    <tr>
+        <td colspan="6">
+            <div class="slidingDiv{$register.IDREGISTER}">
+                <div>
+                    <div>
+                        <h3>Register</h3>
+                        <table>
+                            <tr>
+                                <td>Hello World</td>
+                                <td>Hello World</td>
+                            </tr>
+                            <tr>
+                                <td>Mã người đăng kí</td>
+                                <td>{$register.IDREGISTER}</td>
+                            </tr>
+                            <tr>
+                                <td>Chứng minh nhân dân</td>
+                                <td>{$register.CMND}</td>
+                            </tr>
+                            <tr>
+                                <td>Họ và chữ lót</td>
+                                <td>{$register.HO}</td>
+                            </tr>
+                            <tr>
+                                <td>Tên</td>
+                                <td>{$register.TEN}</td>
+                            </tr>
+                            <tr>
+                                <td>Giới tính</td>
+                                <td>{$register.PHAINAM}</td>
+                            </tr>
+                            <tr>
+                                <td>Ngày sinh</td>
+                                <td>{$register.NGAYSINH}</td>
+                            </tr>
+                            <tr>
+                                <td>Điện thoại</td>
+                                <td>{$register.DIENTHOAI}</td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td>{$register.EMAIL}</td>
+                            </tr>
+                            <tr>
+                                <td>Địa chỉ</td>
+                                <td>{$register.DIACHI}</td>
+                            </tr>
+                            <tr>
+                                <td>Lý do</td>
+                                <td>{$register.LYDO}</td>
+                            </tr>
+                            <tr>
+                                <td>Loại</td>
+                                <td>{$register.LOAIPASSPORT}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <h3>President</h3>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function(){
+                        $(".slidingDiv{$register.IDREGISTER}").hide();
+                        $("#show_hide{$register.IDREGISTER}").show(); 
+                        $('#show_hide{$register.IDREGISTER}').click(function(){
+                            $(".slidingDiv{$register.IDREGISTER}").slideToggle();
+                        }); 
+                    });
+                </script>
+            </div>
+        </td>
+    </tr>
+
+    {/foreach}
+    </tbody>
+</table>
+
+{/block}
+
