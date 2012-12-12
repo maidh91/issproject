@@ -1,7 +1,7 @@
 {extends file=$layout}
 {block name=main}
         <h1>Đăng kí Passport</h1>
-        <form action="index.php?r=passport&m=register" method="post">
+        <form action="index.php?r=register&m=register" method="post">
         <table>
             <tr>
                 <td><label>Họ</label></td><td><input type="text" name="register[Ho]"/></td>
@@ -25,13 +25,20 @@
                 <td><label>Email</label></td><td><input type="text" name="register[Email]"/></td>
             </tr>
             <tr>
-                <td><label>Địa chỉ</label></td><td><input type="text" name="register[SoNha]"/></td>
+                <td><label>Địa chỉ</label></td><td><input type="text" name="register[Diachi]"/></td>
             </tr>
             <tr>
                 <td><label>Lý do</label></td><td><input type="text" name="register[LyDo]"/></td>
             </tr>
             <tr>
-                <td><label>Loại Passport</label></td><td><input type="text" name="register[LoaiPassport]"/></td>
+                <td><label>Loại Passport</label></td>
+                <td>
+                    <select name ="">
+                        {foreach from=$types item=type}
+                            <option value={$type.IDLOAIPASSPORT}>{$type.LOAIPASSPORT}</option>
+                        {/foreach}
+                    </select>
+                </td>
             </tr>
             <tr>
                 <td></td><td><button type="submit" class="btn">Đăng kí Hộ chiếu</button></td>

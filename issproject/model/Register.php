@@ -5,7 +5,7 @@
  * and open the template in the editor.
  */
 class Register extends Model{
-    
+    public $IDREGISTER;
     public $Ho;
     public $Ten;
     public $CMND;
@@ -13,14 +13,9 @@ class Register extends Model{
     public $NgaySinh;
     public $DienThoai;
     public $Email;
-    public $SoNha;
-    public $TenDuong;
-    public $Phuong;
-    public $Quan;
-    public $Tinh;
+    public $Diachi;
     public $LyDo;
-        public $LoaiPassport;
-    /*
+    public $LoaiPassport;
     function __construct($array) {
         $this->Ho = $array['Ho'];
         $this->Ten = $array['Ten'];
@@ -29,15 +24,10 @@ class Register extends Model{
         $this->NgaySinh = $array['NgaySinh'];
         $this->DienThoai = $array['DienThoai'];
         $this->Email = $array['Email'];
-        $this->SoNha = $array['SoNha'];
-        $this->TenDuong = $array['TenDuong'];
-        $this->Phuong = $array['Phuong'];
-        $this->Quan = $array['Quan'];
-        $this->Tinh = $array['Tinh'];
+        $this->Diachi = $array['Diachi'];
         $this->LyDo = $array['LyDo'];
         $this->LoaiPassport = $array['LoaiPassport'];
     }
-     */
 }
  
 ?>

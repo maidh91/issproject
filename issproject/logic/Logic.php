@@ -2,17 +2,20 @@
 class Logic{
     public $username = USERNAME;
     public $password = PASSWORD;
-    
+    public $return_value;
+    public function setReturnValue($value){
+        $this->return_value = $value;
+    }
     public function setUser($name,$pass){
         $this->username = $name;
         $this->password = $pass;
     }
             
-    public function createWriteQuery($sql){
+     public function callProcedure($sql){
         $conn = oci_connect($this->username,$this->password,HOST);
         if($conn){
             $ociid = oci_parse($conn,$sql);
-            $result = oci_execute($ociid);
+            $result = oci_execute($ociid);        
             oci_close($conn);
             return $result;
         }
@@ -22,16 +25,31 @@ class Logic{
         }
     }
     
-    public function createReadQuery($sql){
+    public function callFunction($sql){
         $conn = oci_connect($this->username,$this->password,HOST);
         if($conn){
             $ociid = oci_parse($conn,$sql);
             oci_execute($ociid);
-            $rows = array();
+            $return = oci_fetch_array($ociid,OCI_ASSOC);
+            oci_close($conn);
+            return $return[$return_value];
+        }
+        else{
+            echo "Cant connect oracle";
+            exit(0);
+        }
+    }
+    
+    public function select($sql){
+        $conn = oci_connect($this->username,$this->password,HOST);
+        if($conn){
+            $ociid = oci_parse($conn,$sql);
+            oci_execute($ociid);
+            $rows = array( );
             $i = 0;
-            while($row = oci_fetch_array($ociid)){
-		$rows[$i] = $row;
-                $i++;
+            while($row = oci_fetch_array($ociid,OCI_ASSOC)){
+                $rows[$i] = $row;
+                $i++;                        
             }
             oci_close($conn);
             return $rows;
