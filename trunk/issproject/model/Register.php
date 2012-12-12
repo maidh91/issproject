@@ -16,17 +16,8 @@ class Register extends Model{
     public $Diachi;
     public $LyDo;
     public $LoaiPassport;
-    function __construct($array) {
-        $this->Ho = $array['Ho'];
-        $this->Ten = $array['Ten'];
-        $this->CMND = $array['CMND'];
-        $this->PhaiNam = $array['PhaiNam'];
-        $this->NgaySinh = $array['NgaySinh'];
-        $this->DienThoai = $array['DienThoai'];
-        $this->Email = $array['Email'];
-        $this->Diachi = $array['Diachi'];
-        $this->LyDo = $array['LyDo'];
-        $this->LoaiPassport = $array['LoaiPassport'];
+    function __construct($array){
+       parent::__construct($array);
     }
 }
  
