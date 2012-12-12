@@ -3,7 +3,7 @@
         <h1>Đăng kí Passport</h1>
         
         {if isset($smarty.session.message)}
-            {$smarty.session.message}
+        <div class="alert-error">{$smarty.session.message}</div>
         {/if}
         <form action="index.php?r=register&m=register" method="post">
         <table>
