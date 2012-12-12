@@ -25,14 +25,16 @@ class Logic{
         }
     }
     
-    public function callFunction($sql){
+    public function callFunction($function,$return){
+        $this->return_value = $return;
+        $sql = "select {$function} as {$this->return_value} from dual";
         $conn = oci_connect($this->username,$this->password,HOST);
         if($conn){
             $ociid = oci_parse($conn,$sql);
             oci_execute($ociid);
             $return = oci_fetch_array($ociid,OCI_ASSOC);
             oci_close($conn);
-            return $return[$return_value];
+            return $return[$this->return_value];
         }
         else{
             echo "Cant connect oracle";

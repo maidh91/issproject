@@ -1,6 +1,10 @@
 {extends file=$layout}
 {block name=main}
         <h1>Đăng kí Passport</h1>
+        
+        {if isset($smarty.session.message)}
+            {$smarty.session.message}
+        {/if}
         <form action="index.php?r=register&m=register" method="post">
         <table>
             <tr>
@@ -13,10 +17,17 @@
                 <td><label>Chứng minh nhân dân</label></td><td><input type="text" name="register[CMND]"/></td>
             </tr>
             <tr>
-                <td><label>Giới tính</label></td><td><input type="text" name="register[PhaiNam]"/></td>
+                <td><label>Giới tính</label></td>
+                <td>
+                    <select name ="register[PhaiNam]">
+                        {foreach from=$sex key=k item=i}
+                            <option value={$k}>{$i}</option>
+                        {/foreach}
+                    </select>
+                </td>
             </tr>
             <tr>
-                <td><label>Ngày sinh</label></td><td><input type="text" name="register[NgaySinh]"/></td>
+                <td><label>Ngày sinh</label></td><td><input type="text" name="register[NgaySinh]" id="datepicker" /></td>
             </tr>
             <tr>
                 <td><label>DienThoai</label></td> <td><input type="text" name="register[DienThoai]"/></td>
