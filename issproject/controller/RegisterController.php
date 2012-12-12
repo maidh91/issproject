@@ -1,7 +1,6 @@
 <?php
 
 class RegisterController extends AppController {
-
     function __construct() {
         parent::__construct();
     }
@@ -51,15 +50,12 @@ class RegisterController extends AppController {
             //$this->display('templates/passport/register_success.html');
         } else {
             $sex = array('y' => 'Nam', 'n' => 'Nữ');
-            $typepassportProcessing = new TypepassportLogic();
-            $typepassportProcessing->setUser($username, $password);
-            $types = $typepassportProcessing->findAll();
+            $types = array('1' => 'Hộ Chiếu Phổ Thông', '2' => 'Hộ Chiếu Ngoại Giao');
             $this->smarty->assign('types', $types);
             $this->smarty->assign('sex', $sex);
             $this->display('templates/register/index.html');
         }
     }
-
 }
 
 ?>
