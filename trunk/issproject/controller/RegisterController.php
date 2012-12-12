@@ -35,8 +35,6 @@ class RegisterController extends AppController{
                 };
                 
                 if($error_code != SUCCESS_CODE){
-                    echo $session["message"];
-                    
                     $typepassportProcessing = new TypepassportLogic();
                 $typepassportProcessing->setUser($username,$password);
                       $sex = array('y'=> 'Nam','n'=>'Nữ');
