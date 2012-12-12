@@ -1,6 +1,6 @@
 <?php
-define("defaultController", "PassportController");
-define("defaultMethod", "index");
+define("defaultController", "RegisterController");
+define("defaultMethod", "register");
 	class Dispatcher{
 			function redirect($path){
 				header("Location: $path");
@@ -17,8 +17,8 @@ define("defaultMethod", "index");
 					case "home":
 						return "HomeController";
 						break;
-                                        case "passport":
-                                            return "PassportController";
+                                        case "register":
+                                            return "RegisterController";
                                             break;
 					default:
                                             return "NoController";
